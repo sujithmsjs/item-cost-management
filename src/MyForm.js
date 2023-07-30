@@ -36,7 +36,7 @@ const MyForm = ({ onAction, errorMessage }) => {
 
   return (
     <div>
-       <h1>My Form1</h1>
+       <h1>Add New</h1>
       <form ref={formRef}>
         <div className="form-group">
           Item <input minLength={4} type="text" name="item" />
