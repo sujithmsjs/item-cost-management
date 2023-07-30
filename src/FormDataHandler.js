@@ -21,6 +21,12 @@ const FormDataHandler = () => {
   };
 
   const handleAction = (data) => {
+
+    if (data.item.length < 4 || parseInt(data.cost || 0) < 1) {
+      alert('Incorrect data, item len > 4 and cost > 0');
+      return;
+    }
+
     switch (data.action) {
       case "Push":
         setData((prevData) => [...prevData, data]);
@@ -62,7 +68,7 @@ const FormDataHandler = () => {
         <EditForm onSave={handleAction} index={index} data={data[index]} />
       )}
 
-      <DataTable data={data} onDelete={deleteHandle} onEdit={handleEdit} />
+      <DataTable data={data} hideDelete={index < 0} onDelete={deleteHandle} onEdit={handleEdit} />
     </div>
   );
 };

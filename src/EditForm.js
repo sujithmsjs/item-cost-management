@@ -29,10 +29,10 @@ const EditForm = ({ onSave, data, index }) => {
           index <input type="text" value={index} name="index" readOnly />
         </div>
         <div className="form-group">
-          Item <input type="text" defaultValue={data?.item} name="item" />
+          Item <input type="text"  minLength={4} defaultValue={data?.item} name="item" />
         </div>
         <div className="form-group">
-          Cost <input type="number" defaultValue={data?.cost} name="cost" />
+          Cost <input type="number"  minLength={4} defaultValue={data?.cost} name="cost" />
         </div>
         <div className="form-group">
           <button type="button" value="Edit" onClick={handleClick}>

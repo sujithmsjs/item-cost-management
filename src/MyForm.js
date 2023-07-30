@@ -30,31 +30,35 @@ const MyForm = ({ onAction, errorMessage }) => {
         // Handle other button clicks if needed
         break;
     }
+    
     onAction(newForm);
   };
 
   return (
-    <form ref={formRef}>
-      <div className="form-group">
-        Item <input type="text" name="item" />
-      </div>
-      <div className="form-group">
-        Cost <input type="number" name="cost" />
-      </div>
-      <div className="form-group">
-        <button type="button" value="Push" onClick={handleClick}>
-          Push
-        </button>
-        <button type="button" value="Shift" onClick={handleClick}>
-          Shift
-        </button>
-        <button type="button" value="Add At" onClick={handleClick}>
-          Add At
-        </button>
-        <input type="number" name="index" max="4" min="1" step="1" />
-      </div>
-      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-    </form>
+    <div>
+       <h1>Add New</h1>
+      <form ref={formRef}>
+        <div className="form-group">
+          Item <input minLength={4} type="text" name="item" />
+        </div>
+        <div className="form-group">
+          Cost <input type="number" minLength={4} name="cost" />
+        </div>
+        <div className="form-group">
+          <button type="button" value="Push" onClick={handleClick}>
+            Push
+          </button>
+          <button type="button" value="Shift" onClick={handleClick}>
+            Shift
+          </button>
+          <button type="button" value="Add At" onClick={handleClick}>
+            Add At
+          </button>
+          <input type="number" name="index" max="4" min="1" step="1" />
+        </div>
+        {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
+      </form>
+    </div>
   );
 };
 

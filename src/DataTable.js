@@ -1,4 +1,4 @@
-const DataTable = ({ data, onDelete, onEdit }) => {
+const DataTable = ({ data, onDelete, onEdit, hideDelete }) => {
   const handleDelete = (event, index) => {
     onDelete(index);
   };
@@ -24,12 +24,15 @@ const DataTable = ({ data, onDelete, onEdit }) => {
             <td>{e.item ?? "undefined"}</td>
             <td>₹{e.cost ?? "undefined"}</td>
             <td>
-              <button
-                className="delete-btn"
-                onClick={(event) => handleDelete(event, index)}
-              >
-                Delete
-              </button>
+              {
+                hideDelete && <button
+                  className="delete-btn"
+                  onClick={(event) => handleDelete(event, index)}
+                >
+                  Delete
+                </button>
+              }
+
               <button
                 className="edit-btn"
                 onClick={(event) => handleEdit(event, index)}
