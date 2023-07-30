@@ -36,10 +36,10 @@ const MyForm = ({ onAction, errorMessage }) => {
   return (
     <form ref={formRef}>
       <div className="form-group">
-        Item <input type="text" name="item" />
+        Item <input minLength={4} type="text" name="item" />
       </div>
       <div className="form-group">
-        Cost <input type="number" name="cost" />
+        Cost <input type="number" minLength={4} name="cost" />
       </div>
       <div className="form-group">
         <button type="button" value="Push" onClick={handleClick}>

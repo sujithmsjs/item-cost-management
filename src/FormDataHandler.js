@@ -62,7 +62,7 @@ const FormDataHandler = () => {
         <EditForm onSave={handleAction} index={index} data={data[index]} />
       )}
 
-      <DataTable data={data} onDelete={deleteHandle} onEdit={handleEdit} />
+      <DataTable data={data} hideDelete={index < 0} onDelete={deleteHandle} onEdit={handleEdit} />
     </div>
   );
 };
