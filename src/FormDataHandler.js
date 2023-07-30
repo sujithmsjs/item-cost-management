@@ -22,8 +22,9 @@ const FormDataHandler = () => {
 
   const handleAction = (data) => {
 
-    if(data.item.lenght > 4 && data.cost > 0){
-      alert('Incorrect data');
+    if (data.item.length < 4 || parseInt(data.cost || 0) < 1) {
+      alert('Incorrect data, item len > 4 and code > 0');
+      return;
     }
 
     switch (data.action) {
