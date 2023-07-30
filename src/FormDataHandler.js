@@ -21,6 +21,11 @@ const FormDataHandler = () => {
   };
 
   const handleAction = (data) => {
+
+    if(data.item.lenght > 4 && data.cost > 0){
+      alert('Incorrect data');
+    }
+
     switch (data.action) {
       case "Push":
         setData((prevData) => [...prevData, data]);
